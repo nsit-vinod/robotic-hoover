@@ -1,0 +1,26 @@
+spring:
+  data:
+    mongodb:
+      database: hoover
+      host: localhost
+      password: ENC(23ClLWiedLx8v6XT6Wk+Bg==)
+      port: 27017
+  messages: 
+    basename: messages 
+#for hiding the properties that are in plain text we can use Jasypt (Java Simplified Encryption) 
+#java liberary which allow developer to add basic encryption capabilities to his/her projects with minimum effort.
+#In the application.properties (or yaml), we will write our encrypted properties between parenthesis and put ENC
+# keyword before it. Like; password=ENC(23ClLWiedLx8v6XT6Wk+Bg==)
+#We can use encrypt.bat or encrypt.sh in jasypt/bin folder to encrypt properties in yml file.
+#D:\jasypt\bin>encrypt.bat input MBcoder password=secret
+#There are several algorithms to pick but I will leave it as default and only give my property value and secret to encrpyt it
+#We can give it as a command line argument when running the application;
+#–jasypt.encryptor.password=secret
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.yoti.hoover:  DEBUG
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: application-hoover.log   
