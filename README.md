@@ -123,4 +123,4 @@ Running Examples Steps:
   
    You are all Set
   
-  I have written test cases also. So you can test all test cases. From the name of test case you will get to know the perpose of test case.
+I have written test cases also. So you can test all test cases. From the name of test case you will get to know the purpose of test case.
