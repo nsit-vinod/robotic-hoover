@@ -54,40 +54,55 @@ Installing Tools
 For running this application you need to install required development environmet. Here is given list you require for running this application.
 
 SOFTWARE REQUIRED
+
 	Java 8+
 	Maven
-    MongoDB
+	MongoDB
 	Eclipse or STS (optional)
 
 MongoDB DATABASE CONFIGURATION
+
 	URL: localhost
 	Port: 20017
 	Database Name: hoover	
 	
 HOW TO RUN TEST CASES
+
 	Using maven
 	run mvn clean test
 Using Eclipse IDE
+
 	select project -> run as -> maven test
 	COMPILATION INSTRUCTIONS
+
 Using Command Line Interface
+
 	run mvn clean package
+	
 Using Eclipse IDE
+
 	select project -> run as -> maven build
-Note: project compilation will generate hoover-yoti-0.0.1-SNAPSHOT.jar file under target directory.
+	
+Note: project compilation will generate HooverYoti-0.0.1-SNAPSHOT.jar file under target directory.
 
 DEPLOYMENT INSTRUCTIONS
+
 Using Command Line Interface
+
 	go to target directory
-	run java -jar robotic_hoover-0.0.1-SNAPSHOT.jar
+	run java -jar HooverYoti-0.0.1-SNAPSHOT.jar
+	
 Using Eclipse IDE
+
 	select project -> run as -> Spring Boot App	
 
 HOW TO ACCESS API:  
+
 	I have configured swagger for api documentation. So we can get this by http://localhost:8080/swagger-ui.html
 	Please open UML diagram on https://www.draw.io 
 	
 Running Examples Steps:
+
   1. Download the zip or clone the Git repository.
   
   2. Unzip the zip file (if you downloaded one)
