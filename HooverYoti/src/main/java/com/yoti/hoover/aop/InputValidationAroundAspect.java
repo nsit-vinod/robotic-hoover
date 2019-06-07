@@ -16,18 +16,19 @@ public class InputValidationAroundAspect {
 
 	private final Logger logger = LoggerFactory.getLogger(InputValidationAroundAspect.class);
 	@Around("execution(public * com.yoti.hoover.service.impl.HooverServiceImpl.moveHooverAndCleanPatches(*))")
-	public void validateInput(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+	public Object validateInput(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 		logger.info("===================Input Validatiton started =====================");
-		testInputData(proceedingJoinPoint);
-		logger.info("===================Input Validatiton started END=====================");
+		return testInputData(proceedingJoinPoint);
+		
 	}
-	private void testInputData(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+	private Object testInputData(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 		
 		HooverInput hooverInput = (HooverInput) proceedingJoinPoint.getArgs()[0];
 		
 		try {
 			HooverInputValidationUtils.validateHooverInput(hooverInput);
-			proceedingJoinPoint.proceed();
+			logger.info("===================Input Validatiton END=====================");
+			return proceedingJoinPoint.proceed();
 		}
 		catch(Throwable ex) {
 			throw ex;
