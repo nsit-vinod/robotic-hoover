@@ -24,7 +24,7 @@ public class InputValidationAroundAspect {
 		
 		HooverInput hooverInput = (HooverInput) joinPoint.getArgs()[0];
 		HooverInputValidationUtils.validateHooverInput(hooverInput);
-		logger.info("===================Input Validatiton started =====================");
+		logger.info("===================Input Validatiton End =====================");
 	}
 	
 }
